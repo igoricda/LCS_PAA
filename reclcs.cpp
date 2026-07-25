@@ -106,7 +106,7 @@ int main() {
     int i = str1.length();
     int j = str2.length();
 
-    std::vector<std::vector<int>> table(i + 1, std::vector<int>(j + 1, -1));
+    std::vector<std::vector<int>> table(i + 1, std::vector<int>(j + 1, 0));
     int ans = recLCSTable(str1, str2, str1.length(), str2.length(), table);
     std::string lcs = STR_LCS(str1, str2, table);
 
