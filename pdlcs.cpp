@@ -10,7 +10,7 @@
 
 void ReadFiles(std::ifstream &file, std::string &outLine1, std::string &outLine2){
     if (!file.is_open()) {
-        std::cerr << "Error opening file!" << std::endl;
+        std::cerr << "Erro ao abrir o arquivo!" << std::endl;
         return;
     }
     
@@ -27,6 +27,7 @@ void ReadFiles(std::ifstream &file, std::string &outLine1, std::string &outLine2
     file.close();
 }
 
+//Implementação usando Programação dinâmica
 std::vector<std::vector<int>> PD_LCS(const std::string& str1,
                                      const std::string& str2)
 {
@@ -49,6 +50,7 @@ std::vector<std::vector<int>> PD_LCS(const std::string& str1,
     return table;
 }
 
+//Backtracking pela tabela
 std::string STR_LCS(const std::string& str1,
                     const std::string& str2,
                     const std::vector<std::vector<int>>& table)
@@ -67,13 +69,9 @@ std::string STR_LCS(const std::string& str1,
             j--;
         }
         else if (table[i - 1][j] >= table[i][j - 1])
-        {
             i--;
-        }
         else
-        {
             j--;
-        }
     }
 
     return lcs;
@@ -82,7 +80,7 @@ std::string STR_LCS(const std::string& str1,
 int main() {
 
 
-    std::ifstream file("./input/Strings500.txt");
+    std::ifstream file("./input/Strings10000.txt");
     std::string str1 = "";
     std::string str2 = "";
 
