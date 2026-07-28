@@ -65,8 +65,10 @@ int main() {
     int i = str1.length();
     int j = str2.length();
 
+    //tinit
     std::string lcs = recLCS(str1, str2, i, j);
-
+    //tfim
+    
     std::cout << "\nTamanho da LCS: " << lcs.length() << '\n';
     std::cout << "LCS: " << lcs << '\n';
 

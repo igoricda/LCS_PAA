@@ -88,9 +88,11 @@ int main() {
 
     std::cout << "String 1: " << str1 << '\n' << "\nString 2:" << str2 << '\n'; 
 
+    //tinit
     auto table = PD_LCS(str1, str2);
 
     std::string lcs = STR_LCS(str1, str2, table);
+    //tfim
 
     std::cout << "\nTamanho da LCS: "
             << table[str1.length()][str2.length()] << '\n';
