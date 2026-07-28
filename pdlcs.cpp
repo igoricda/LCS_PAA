@@ -80,7 +80,7 @@ std::string STR_LCS(const std::string& str1,
 int main() {
 
 
-    std::ifstream file("./input/Strings10000.txt");
+    std::ifstream file("./input/Strings18.txt");
     std::string str1 = "";
     std::string str2 = "";
 
