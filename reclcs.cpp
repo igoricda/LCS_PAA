@@ -28,8 +28,6 @@ void ReadFiles(std::ifstream &file, std::string &outLine1, std::string &outLine2
 }
 
 
-//Implementação recursiva, retornando somente o tamanho
-
 
 std::string recLCS(const std::string& str1,
            const std::string& str2,
