@@ -2,21 +2,20 @@
 CXX      := g++
 CXXFLAGS := -Wall -Wextra -std=c++17 -O2
 
-# Find all .cpp files
-SRCS := $(wildcard *.cpp)
-
-# Executable names (remove .cpp extension)
-TARGETS := $(SRCS:.cpp=)
-
 # Default target
-all: $(TARGETS)
+all: main pdlcs reclcs
 
-# Build each executable from its corresponding source
-%: %.cpp
-	$(CXX) $(CXXFLAGS) $< -o $@
+main: main.cpp lcs.cpp fileUtils.cpp
+	$(CXX) $(CXXFLAGS) main.cpp lcs.cpp fileUtils.cpp -o main
+
+pdlcs: pdlcs.cpp lcs.cpp fileUtils.cpp
+	$(CXX) $(CXXFLAGS) pdlcs.cpp lcs.cpp fileUtils.cpp -o pdlcs
+
+reclcs: reclcs.cpp lcs.cpp fileUtils.cpp
+	$(CXX) $(CXXFLAGS) reclcs.cpp lcs.cpp fileUtils.cpp -o reclcs
 
 # Clean
 clean:
-	rm -f $(TARGETS)
+	rm -f main pdlcs reclcs
 
 .PHONY: all clean
